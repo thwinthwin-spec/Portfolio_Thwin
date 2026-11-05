@@ -8,6 +8,27 @@ document.addEventListener("DOMContentLoaded", () => {
   const topButton = document.querySelector(".to-top");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const typedText = document.querySelector(".typed-text");
+  const themeToggle = document.querySelector(".theme-toggle");
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+  const savedTheme = window.localStorage.getItem("portfolio-theme");
+
+  function applyTheme(theme, save = false) {
+    document.documentElement.dataset.theme = theme;
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    themeToggle.setAttribute("aria-label", `Switch to ${nextTheme} mode`);
+    themeToggle.setAttribute("title", `Switch to ${nextTheme} mode`);
+    themeToggle.querySelector(".theme-label").textContent = `${nextTheme[0].toUpperCase()}${nextTheme.slice(1)} mode`;
+    themeColor.setAttribute("content", theme === "dark" ? "#090a10" : "#f5f6fb");
+    if (save) window.localStorage.setItem("portfolio-theme", theme);
+  }
+
+  const initialTheme = savedTheme === "light" || savedTheme === "dark"
+    ? savedTheme
+    : window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+  applyTheme(initialTheme);
+  themeToggle.addEventListener("click", () => {
+    applyTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark", true);
+  });
 
   if (!reducedMotion) {
     const phrases = ["Web Developer", "Problem Solver", "Lifelong Learner"];
