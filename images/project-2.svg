@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 460">
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#25203d"/><stop offset="1" stop-color="#151724"/></linearGradient><linearGradient id="image" x2="1" y2="1"><stop stop-color="#a381cd"/><stop offset="1" stop-color="#5a88a5"/></linearGradient></defs>
+  <rect width="720" height="460" fill="url(#bg)"/><circle cx="105" cy="86" r="170" fill="#bd84cd" opacity=".08"/>
+  <rect x="84" y="52" width="552" height="356" rx="14" fill="#0f121d" stroke="#fff" stroke-opacity=".13"/>
+  <rect x="84" y="52" width="552" height="42" rx="14" fill="#191a29"/><path d="M84 80h552v14H84z" fill="#191a29"/>
+  <text x="108" y="78" fill="#d3c4fa" font-family="Arial,sans-serif" font-size="12" font-weight="700">fieldnotes.</text>
+  <g fill="#858799" font-family="Arial,sans-serif" font-size="8"><text x="391" y="77">Stories</text><text x="440" y="77">Discover</text><text x="506" y="77">About</text></g><rect x="555" y="65" width="56" height="17" rx="8" fill="#7c69b9"/><text x="568" y="77" fill="#fff" font-family="Arial,sans-serif" font-size="7">SIGN IN</text>
+  <rect x="106" y="111" width="508" height="158" rx="8" fill="url(#image)"/>
+  <circle cx="490" cy="153" r="36" fill="#e5b994" opacity=".8"/><path d="M401 269c18-81 57-119 109-119s88 46 104 119" fill="#292b48" opacity=".82"/><path d="M107 239c60-54 101-26 145 6 36 26 60-15 93-57" fill="none" stroke="#d7ccfa" stroke-opacity=".45" stroke-width="2"/>
+  <rect x="128" y="129" width="88" height="20" rx="10" fill="#191a29" fill-opacity=".65"/><text x="141" y="142" fill="#fff" font-family="Arial,sans-serif" font-size="8">DESIGN &amp; LIFE</text>
+  <text x="108" y="296" fill="#a999e4" font-family="Arial,sans-serif" font-size="8" letter-spacing="2">A PLACE FOR NEW PERSPECTIVES</text>
+  <text x="108" y="323" fill="#f2effa" font-family="Arial,sans-serif" font-size="22" font-weight="700">The art of starting small</text>
+  <g fill="#777b8d"><rect x="108" y="341" width="304" height="5" rx="2"/><rect x="108" y="354" width="270" height="5" rx="2"/></g>
+  <circle cx="589" cy="350" r="17" fill="#29243e"/><path d="M584 350h10m-5-5v10" stroke="#c8b2ff" stroke-width="1.5"/>
+</svg>

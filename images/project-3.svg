@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 460">
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#192b34"/><stop offset="1" stop-color="#171a28"/></linearGradient><linearGradient id="accent" x2="1"><stop stop-color="#69d0c0"/><stop offset="1" stop-color="#94a7f3"/></linearGradient></defs>
+  <rect width="720" height="460" fill="url(#bg)"/><circle cx="618" cy="95" r="184" fill="#58cdbb" opacity=".08"/>
+  <rect x="79" y="48" width="562" height="365" rx="15" fill="#0d141b" stroke="#fff" stroke-opacity=".14"/>
+  <rect x="79" y="48" width="562" height="43" rx="15" fill="#18232c"/><path d="M79 77h562v14H79z" fill="#18232c"/>
+  <rect x="99" y="61" width="23" height="20" rx="6" fill="url(#accent)"/><path d="M106 76l4-10 5 10m-8-3h7" fill="none" stroke="#10222b" stroke-width="1.5"/>
+  <text x="130" y="76" fill="#e4ebee" font-family="Arial,sans-serif" font-size="10" font-weight="700">PULSE / FITNESS</text>
+  <circle cx="598" cy="69" r="11" fill="#31434a"/><circle cx="598" cy="69" r="4" fill="#92d7ca"/>
+  <text x="104" y="119" fill="#f0f4f3" font-family="Arial,sans-serif" font-size="16" font-weight="700">Your training, at a glance</text><text x="104" y="137" fill="#85949a" font-family="Arial,sans-serif" font-size="8">WEEKLY ACTIVITY OVERVIEW</text>
+  <rect x="104" y="154" width="320" height="159" rx="8" fill="#17232b" stroke="#fff" stroke-opacity=".06"/><text x="121" y="176" fill="#b9c5c6" font-family="Arial,sans-serif" font-size="9">Activity this week</text>
+  <g fill="#26353d"><rect x="130" y="238" width="23" height="54" rx="4"/><rect x="170" y="213" width="23" height="79" rx="4"/><rect x="210" y="226" width="23" height="66" rx="4"/><rect x="250" y="191" width="23" height="101" rx="4"/><rect x="290" y="208" width="23" height="84" rx="4"/><rect x="330" y="178" width="23" height="114" rx="4"/><rect x="370" y="201" width="23" height="91" rx="4"/></g>
+  <g fill="url(#accent)"><rect x="130" y="266" width="23" height="26" rx="4"/><rect x="170" y="250" width="23" height="42" rx="4"/><rect x="210" y="270" width="23" height="22" rx="4"/><rect x="250" y="231" width="23" height="61" rx="4"/><rect x="290" y="250" width="23" height="42" rx="4"/><rect x="330" y="218" width="23" height="74" rx="4"/><rect x="370" y="245" width="23" height="47" rx="4"/></g>
+  <rect x="441" y="154" width="175" height="159" rx="8" fill="#17232b" stroke="#fff" stroke-opacity=".06"/><text x="457" y="176" fill="#b9c5c6" font-family="Arial,sans-serif" font-size="9">Member snapshot</text>
+  <circle cx="528" cy="235" r="39" fill="none" stroke="#2b4146" stroke-width="9"/><path d="M528 196a39 39 0 1 1-34 58" fill="none" stroke="url(#accent)" stroke-width="9" stroke-linecap="round"/>
+  <text x="514" y="237" fill="#eef5f1" font-family="Arial,sans-serif" font-size="17" font-weight="700">72</text><text x="508" y="251" fill="#839497" font-family="Arial,sans-serif" font-size="7">ACTIVE</text>
+  <g fill="#718086"><rect x="104" y="333" width="136" height="50" rx="7"/><rect x="252" y="333" width="136" height="50" rx="7"/><rect x="400" y="333" width="216" height="50" rx="7"/></g>
+  <g fill="#1c2b31"><rect x="112" y="341" width="120" height="34" rx="5"/><rect x="260" y="341" width="120" height="34" rx="5"/><rect x="408" y="341" width="200" height="34" rx="5"/></g>
+  <text x="122" y="363" fill="#89d5c6" font-family="Arial,sans-serif" font-size="8">MEMBERS</text><text x="270" y="363" fill="#a3b6ff" font-family="Arial,sans-serif" font-size="8">SESSIONS</text><text x="418" y="363" fill="#c1ccce" font-family="Arial,sans-serif" font-size="8">TRAINING PLANS</text>
+</svg>
