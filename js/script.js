@@ -61,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
     menuToggle.setAttribute("aria-expanded", "false");
     menuToggle.setAttribute("aria-label", "Open navigation menu");
     navMenu.classList.remove("open");
-    document.body.classList.remove("menu-open");
   }
 
   menuToggle.addEventListener("click", () => {
@@ -69,15 +68,21 @@ document.addEventListener("DOMContentLoaded", () => {
     menuToggle.setAttribute("aria-expanded", String(!isOpen));
     menuToggle.setAttribute("aria-label", isOpen ? "Open navigation menu" : "Close navigation menu");
     navMenu.classList.toggle("open", !isOpen);
-    document.body.classList.toggle("menu-open", !isOpen);
   });
 
+  header.querySelector(".brand").addEventListener("click", closeMenu);
   navLinks.forEach((link) => link.addEventListener("click", closeMenu));
+  document.addEventListener("pointerdown", (event) => {
+    if (navMenu.classList.contains("open") && !header.contains(event.target)) closeMenu();
+  });
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && navMenu.classList.contains("open")) {
       closeMenu();
       menuToggle.focus();
     }
+  });
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 760 && navMenu.classList.contains("open")) closeMenu();
   });
 
   function updateScrollUI() {
