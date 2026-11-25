@@ -2,18 +2,18 @@
 
 A responsive, single-page developer portfolio built with plain HTML, CSS, and JavaScript. It presents my background, skills, selected project concepts, and a simple contact form that opens the visitor's email app — no backend or build step required.
 
-## အကျဉ်း — ဒီ project က ဘာလဲ? (At a glance)
+## At a glance — what is this project?
 
 | | |
 | --- | --- |
 | **Project** | Thwin Htoo Aung — Portfolio |
-| **အမျိုးအစား** | Static single-page developer portfolio — HTML/CSS/JavaScript သာ |
-| **ဘာလုပ်ပေးလဲ** | Hero, skills, filterable project cards, contact form (လက်ခံသူရဲ့ email app ကို ဖွင့်ပေးတာသာ), light/dark theme, မိုဘိုင်းအတွက် လိုက်ဖက်တဲ့ nav |
-| **Tech** | HTML5 + CSS3 + vanilla JavaScript (DOM APIs, IntersectionObserver, `localStorage`) · Google Fonts · SVG/JPEG assets · dependency မရှိပါ |
-| **Ports** | Build မလိုပါ — `index.html` ကို တိုက်ရိုက်ဖွင့်လို့ရပါတယ်။ လိုရင် `python -m http.server 8000` → `http://localhost:8000` |
-| **အခြေအနေ** | Backend / API key မပါပါ။ Contact form က form submit မဟုတ်ဘဲ email app ကိုပဲ ဖွင့်ပေးပါတယ်။ |
+| **Type** | Static single-page developer portfolio — plain HTML/CSS/JavaScript |
+| **What it does** | Hero, skills, filterable project cards, contact link that opens the visitor's e-mail app, light/dark theme, mobile-friendly navigation |
+| **Tech** | HTML5 + CSS3 + vanilla JavaScript (DOM APIs, IntersectionObserver, `localStorage`) · Google Fonts · SVG/JPEG assets · no dependencies |
+| **Ports** | No build step — open `index.html` directly. Optionally: `python -m http.server 8000` → `http://localhost:8000` |
+| **Status** | No backend or API keys. The contact form opens an e-mail app rather than submitting to a server. |
 
-**In short (English):** A responsive one-page developer portfolio built with plain HTML, CSS and JavaScript — background, skills, filterable project cards, light/dark theme and an e-mail-app contact link. No backend, build step or dependencies.
+In short: A responsive one-page developer portfolio built with plain HTML, CSS and JavaScript — background, skills, filterable project cards, light/dark theme and an e-mail-app contact link. No backend, build step or dependencies.
 
 ![Portfolio social preview](images/og-preview.png)
 
