@@ -144,6 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const form = document.getElementById("contact-form");
   const status = document.getElementById("form-status");
+  if (!form || !status) return;
   const fields = [
     { input: form.elements.name, error: document.getElementById("name-error"), label: "Full name", validate: (value) => value.trim().length >= 2 ? "" : "Please enter your name (at least 2 characters)." },
     { input: form.elements.email, error: document.getElementById("email-error"), label: "Email address", validate: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()) ? "" : "Please enter a valid email address." },
