@@ -140,6 +140,189 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  const galleries = {
+    "inventory-sales-system": {
+      repo: "https://github.com/thwinthwin-spec/inventory-sales-system",
+      images: [
+        { src: "images/screenshots/inventory-dashboard.jpg", caption: "Owner dashboard with today's sales, monthly totals and gross profit." },
+        { src: "images/screenshots/inventory-products.jpg", caption: "Product catalogue with SKU, category, MMK price and stock status." }
+      ]
+    },
+    "job-application-tracker": {
+      repo: "https://github.com/thwinthwin-spec/job-application-tracker",
+      images: [
+        { src: "images/screenshots/job-dashboard.jpg", caption: "Job search dashboard with application counts and upcoming follow-ups." }
+      ]
+    },
+    "clinic-appointment-app": {
+      repo: "https://github.com/thwinthwin-spec/clinic-appointment-app",
+      images: [
+        { src: "images/screenshots/clinic-patient.jpg", caption: "Patient view: browse clinicians and reserve an available slot." },
+        { src: "images/screenshots/clinic-admin.jpg", caption: "Clinic administrator dashboard for doctors and appointments." }
+      ]
+    },
+    "restaurant-pos-project": {
+      repo: "https://github.com/thwinthwin-spec/restaurant-pos-project",
+      images: [
+        { src: "images/screenshots/restaurant-dashboard.jpg", caption: "Restaurant overview with confirmed MMK sales and pending orders." },
+        { src: "images/screenshots/restaurant-pos.jpg", caption: "Point-of-sale desk with a searchable menu and order builder." },
+        { src: "images/screenshots/restaurant-login.jpg", caption: "Staff sign-in screen for the restaurant workspace." }
+      ]
+    },
+    "hotel-booking-app": {
+      repo: "https://github.com/thwinthwin-spec/hotel-booking-app",
+      images: [
+        { src: "images/screenshots/hotel-dashboard.jpg", caption: "Hotel admin dashboard with bookings, revenue and occupancy." },
+        { src: "images/screenshots/hotel-login.jpg", caption: "Hotel admin sign-in with a demo account shortcut." }
+      ]
+    },
+    "Boxing-Management-System": {
+      repo: "https://github.com/thwinthwin-spec/Boxing-Management-System",
+      images: [
+        { src: "images/screenshots/boxing-home.jpg", caption: "Boxing management landing page for athletes, coaches and admins." }
+      ]
+    },
+    "Clothing-Website": {
+      repo: "https://github.com/thwinthwin-spec/Clothing-Website",
+      images: [
+        { src: "images/screenshots/clothing-login.jpg", caption: "Jinx Clothing sign-in page for the server-rendered store." }
+      ]
+    },
+    "coffee_project": {
+      repo: "https://github.com/thwinthwin-spec/coffee_project",
+      images: [
+        { src: "images/screenshots/coffee-home.jpg", caption: "Bean Boutique Coffee Shop home page with the drinks catalogue." }
+      ]
+    },
+    "LaravelFirstproject": {
+      repo: "https://github.com/thwinthwin-spec/LaravelFirstproject",
+      images: [
+        { src: "images/screenshots/laravel-dashboard.jpg", caption: "Laravel dashboard showing the signed-in demo user." },
+        { src: "images/screenshots/laravel-login.jpg", caption: "Laravel email and password sign-in form." }
+      ]
+    },
+    "Node.js": {
+      repo: "https://github.com/thwinthwin-spec/Node.js",
+      images: [
+        { src: "images/screenshots/node-login.jpg", caption: "TechCall student-management sign-in page." }
+      ]
+    },
+    "Portfolio_Thwin": {
+      repo: "https://github.com/thwinthwin-spec/Portfolio_Thwin",
+      images: [
+        { src: "images/screenshots/portfolio-home.jpg", caption: "This portfolio site with its hero section and project section." }
+      ]
+    },
+    "Boxing": {
+      repo: "https://github.com/thwinthwin-spec/Boxing",
+      images: []
+    }
+  };
+
+  const galleryModal = document.getElementById("gallery-modal");
+  const galleryTitle = document.getElementById("gallery-title");
+  const galleryImage = document.getElementById("gallery-image");
+  const galleryCaption = document.getElementById("gallery-caption");
+  const galleryCounter = document.getElementById("gallery-counter");
+  const galleryRepo = document.getElementById("gallery-repo");
+  const galleryThumbs = document.getElementById("gallery-thumbs");
+  const galleryPrev = document.querySelector("[data-gallery-prev]");
+  const galleryNext = document.querySelector("[data-gallery-next]");
+  const galleryClose = document.querySelector(".gallery-close");
+  let activeImages = [];
+  let activeIndex = 0;
+  let lastTrigger = null;
+
+  function showGalleryImage(index) {
+    if (activeImages.length === 0) return;
+    activeIndex = (index + activeImages.length) % activeImages.length;
+    const current = activeImages[activeIndex];
+    galleryImage.src = current.src;
+    galleryImage.alt = current.caption;
+    galleryCaption.textContent = current.caption;
+    galleryCounter.textContent = (activeIndex + 1) + " / " + activeImages.length;
+    const buttons = galleryThumbs.querySelectorAll(".gallery-thumb");
+    buttons.forEach((button, buttonIndex) => {
+      button.classList.toggle("active", buttonIndex === activeIndex);
+      button.setAttribute("aria-pressed", String(buttonIndex === activeIndex));
+    });
+  }
+
+  function stepGallery(amount) {
+    if (activeImages.length < 2) return;
+    showGalleryImage(activeIndex + amount);
+  }
+
+  function closeGallery() {
+    if (galleryModal.hidden) return;
+    galleryModal.hidden = true;
+    document.body.classList.remove("gallery-open");
+    galleryImage.removeAttribute("src");
+    if (lastTrigger) lastTrigger.focus();
+  }
+
+  function openGallery(key, trigger) {
+    const gallery = galleries[key];
+    if (!gallery) return;
+    activeImages = gallery.images;
+    activeIndex = 0;
+    lastTrigger = trigger;
+    galleryTitle.textContent = trigger.closest(".project-card").querySelector("h3").textContent;
+    galleryRepo.href = gallery.repo;
+    galleryThumbs.textContent = "";
+
+    if (activeImages.length === 0) {
+      galleryImage.removeAttribute("src");
+      galleryImage.alt = "";
+      galleryCaption.textContent = "This repository is reserved for a future project, so there are no screenshots yet.";
+      galleryCounter.textContent = "0 / 0";
+      galleryPrev.disabled = true;
+      galleryNext.disabled = true;
+      galleryImage.hidden = true;
+      const empty = document.createElement("p");
+      empty.className = "gallery-empty";
+      empty.textContent = "No screenshots yet — check the repository description for the current status.";
+      galleryThumbs.appendChild(empty);
+    } else {
+      galleryImage.hidden = false;
+      galleryPrev.disabled = activeImages.length < 2;
+      galleryNext.disabled = activeImages.length < 2;
+      activeImages.forEach((image, index) => {
+        const button = document.createElement("button");
+        button.className = "gallery-thumb";
+        button.type = "button";
+        button.setAttribute("aria-label", "Show screenshot " + (index + 1));
+        button.setAttribute("aria-pressed", "false");
+        const thumb = document.createElement("img");
+        thumb.src = image.src;
+        thumb.alt = "";
+        thumb.loading = "lazy";
+        button.appendChild(thumb);
+        button.addEventListener("click", () => showGalleryImage(index));
+        galleryThumbs.appendChild(button);
+      });
+      showGalleryImage(0);
+    }
+
+    galleryModal.hidden = false;
+    document.body.classList.add("gallery-open");
+    galleryClose.focus();
+  }
+
+  document.querySelectorAll("[data-gallery]").forEach((button) => {
+    button.addEventListener("click", () => openGallery(button.dataset.gallery, button));
+  });
+  galleryClose.addEventListener("click", closeGallery);
+  galleryModal.querySelectorAll("[data-gallery-close]").forEach((element) => element.addEventListener("click", closeGallery));
+  galleryPrev.addEventListener("click", () => stepGallery(-1));
+  galleryNext.addEventListener("click", () => stepGallery(1));
+  document.addEventListener("keydown", (event) => {
+    if (galleryModal.hidden) return;
+    if (event.key === "Escape") closeGallery();
+    if (event.key === "ArrowLeft") stepGallery(-1);
+    if (event.key === "ArrowRight") stepGallery(1);
+  });
+
   document.getElementById("current-year").textContent = String(new Date().getFullYear());
 
   const form = document.getElementById("contact-form");
